@@ -1,27 +1,46 @@
-# Quickmart
+# QuickMart
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+An e-commerce project typically involves building a website or application that allows customers to browse and purchase products or services online. The project can include various features such as:
 
-## Development server
+### functionality Required
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. User authentication and registration: This allows users to create accounts and log in to the website to make purchases, view order history, and manage their account information.
 
-## Code scaffolding
+2. Product catalog and search: The website displays a list of products or services that are available for purchase, and allows users to search for specific products by keyword or category.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. Shopping cart and checkout: Users can add products to a virtual shopping cart and then proceed to checkout to complete the purchase, specifying shipping and payment details.
 
-## Build
+4. Order management: Once an order is placed, the website stores the details of the order and allows the user to track the status of the order.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+5. Payment gateway integration: The website integrates with one or more payment gateways, allowing users to securely and conveniently pay for their purchases.
 
-## Running unit tests
+6. Inventory management: The website tracks the stock levels of products and updates the inventory accordingly as items are sold.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+7. Analytics and reporting: The website generates reports and analytics that provide insights into sales data, customer behavior, and other metrics that can help optimize the e-commerce business.
 
-## Running end-to-end tests
+# Follow these steps to run this project in localhost
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Open your terminal and type these:
 
-## Further help
+1. `git clone https://github.com/tuntunpandit/QuickMart.git`
+2. `npm install`
+3. `npm start`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Live Demo : <a href="#">Click Here!</a>
+
+# Screeshots
+
+1. **Login Page**
+<div>
+  <img src="src/assets/screenshots/3.png" width="90%" title="login">
+</div>
+
+<!-- 2. **Users list Page**
+    <div>
+      <img src="src/assets/screenshots/1.png" width="90%" title="list">
+    </div>
+
+3. **View Details Page**
+    <div>
+      <img src="src/assets/screenshots/2.png" width="90%" title="details">
+    </div> -->
