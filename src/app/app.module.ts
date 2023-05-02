@@ -1,18 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './Components/Authentication/login/login.component';
+import { SharedModule } from './Shared/shared.module';
+
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('./Components/main.module').then(m => m.MainModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./Components/main.module').then(m => m.MainModule)
+  }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
