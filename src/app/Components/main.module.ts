@@ -9,24 +9,19 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    loadChildren: () => import("./Consumer/consumer.module").then(m => m.ConsumerModule)
+    loadChildren: () =>
+      import('./Consumer/consumer.module').then((m) => m.ConsumerModule),
   },
   {
     path: 'admin',
     component: MainComponent,
-    loadChildren: () => import("./Admin/admin.module").then(m => m.AdminModule)
-  }
-]
+    loadChildren: () =>
+      import('./Admin/admin.module').then((m) => m.AdminModule),
+  },
+];
 
 @NgModule({
-  declarations: [
-    MainComponent,
-    HeaderComponent
-  ],
-  imports: [
-    SharedModule,
-    CommonModule,
-    RouterModule.forChild(routes),
-  ]
+  declarations: [MainComponent, HeaderComponent],
+  imports: [SharedModule, CommonModule, RouterModule.forChild(routes)],
 })
-export class MainModule { }
+export class MainModule {}

@@ -12,7 +12,7 @@ import { AuthService } from '../Components/Authentication/auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class MainGuard implements CanActivate {
   constructor(private authS: AuthService, private router: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -23,11 +23,11 @@ export class AuthGuard implements CanActivate {
     | boolean
     | UrlTree {
     const user = this.authS.getDataFromLocalStorage('user');
-    console.log('AuthGuard', user);
-    if (!user) {
+    console.log('MainGuard', user);
+    if (!!user) {
       return true;
     }
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
     return false;
   }
 }
