@@ -1,14 +1,48 @@
 .logo {
   height: 60px;
   width: 60px;
+  cursor: pointer;
 }
 .nav-item > .nav-link {
   color: rgb(0 0 0 / 75%);
   font-weight: 500;
   margin: 0 10px;
 }
-
+.navbar-nav {
+  a {
+    cursor: pointer;
+  }
+}
 // .nav-link:hover,
 // .nav-link.active {
 //   border-bottom: 2px solid rgb(0 0 0 / 75%);
 // }
+.search-box {
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 10px;
+  input[type="text"] {
+    width: 0;
+  }
+
+  .fa-search {
+    position: absolute;
+    cursor: pointer;
+  }
+  .fa-times {
+    display: none;
+  }
+}
+
+.search-box.active {
+  input[type="text"] {
+    width: 200px;
+  }
+  .fa-times {
+    position: absolute;
+    right: 0;
+    display: block;
+    cursor: pointer;
+  }
+}

@@ -23,7 +23,6 @@ export class AuthGuard implements CanActivate {
     | boolean
     | UrlTree {
     const user = this.authS.getDataFromLocalStorage('user');
-    console.log('AuthGuard', user);
     if (!user) {
       return true;
     }

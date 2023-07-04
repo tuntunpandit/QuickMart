@@ -1,1 +1,118 @@
-<p>products works!</p>
+<div class="container-fluid">
+  <div class="main px-5">
+    <!-- <div class="sidebar">
+      <div class="card"></div>
+    </div> -->
+    <div class="products" *ngIf="products$ | async as products">
+      <div class="row">
+        <div class="action col-12">
+          <p>
+            Total : <span>{{ products.length }}</span>
+          </p>
+          <!-- <div class="sort">
+            <span>Sort by</span>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div> -->
+          <div class="view">
+            <i class="fa fa-table" (click)="productViewType = 'table'"></i>
+            <i class="fa fa-image" (click)="productViewType = 'image'"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row gx-md-5">
+        <div
+          class="col-12 col-md-6 col-lg-4 col-xl-3"
+          *ngFor="let product of products"
+        >
+          <div class="product-card" *ngIf="productViewType === 'image'">
+            <div class="product-badge">Hot</div>
+            <div
+              class="product-image"
+              [ngClass]="!product.thumbnail ? 'placeholder-glow' : ''"
+            >
+              <img
+                loading="lazy"
+                src="{{ product.thumbnail }}"
+                alt="{{ product.title }}"
+                [ngClass]="!product.thumbnail ? 'placeholder' : ''"
+              />
+            </div>
+            <div class="product-details">
+              <span class="product-category">{{ product.category }}</span>
+              <h5>{{ product.title }}</h5>
+              <p>
+                {{
+                  product.description.length > 100
+                    ? product.description.slice(0, 50) + "..."
+                    : product.description.slice(0, 50)
+                }}
+              </p>
+              <div class="product-bottom-details">
+                <div class="product-price">
+                  <small>$96.00</small
+                  >{{ product.price | currency : "&#8377;" }}
+                </div>
+                <div class="product-links">
+                  <!-- <span><i class="fa fa-heart"></i></span>
+                  <span><i class="fa fa-shopping-cart"></i></span> -->
+                  <button
+                    class="btn btn-danger cart-btn"
+                    (click)="deleteProduct(product)"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row my-5">
+          <div class="col-12">
+            <div class="product-table" *ngIf="productViewType === 'table'">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let product of products; let i = index">
+                    <td>
+                      <img
+                        class="img-fluid product-image"
+                        [src]="product.thumbnail"
+                        [alt]="product.title"
+                      />
+                    </td>
+                    <td>{{ product.title }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.price | currency : "INR" : "symbol" }}</td>
+                    <td>
+                      <button
+                        class="btn btn-danger"
+                        (click)="deleteProduct(product)"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

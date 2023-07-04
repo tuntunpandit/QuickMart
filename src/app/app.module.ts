@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './Shared/shared.module';
 import { AuthGuard } from './Guards/auth.guard';
 import { MainGuard } from './Guards/main.guard';
+import { StrengthPipe } from './Pipes/strength.pipe';
 
 const routes: Routes = [
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, StrengthPipe],
   imports: [
     SharedModule,
     BrowserModule,

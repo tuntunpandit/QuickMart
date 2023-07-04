@@ -15,7 +15,7 @@ const authRoutes: Routes = [
     component: SignupComponent,
   },
   {
-    path: '',
+    path: '**',
     redirectTo: 'login',
     pathMatch: 'full',
   },

@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+  loginForm!: FormGroup;
   isLoggedIn: boolean = false;
   constructor(
     private fb: FormBuilder,
@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
     if (!this.loginForm.valid) {
       return;
     }
-    console.log('form', this.loginForm);
     const { username, password } = this.loginForm.value;
     this.isLoggedIn = true;
     this.authS.login(username, password).subscribe({

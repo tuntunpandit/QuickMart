@@ -6,22 +6,22 @@ import { ConsumerDashboardComponent } from './consumer-dashboard/consumer-dashbo
 
 const consumerRoutes: Routes = [
   {
-    path: "",
-    component: ConsumerDashboardComponent
+    path: '',
+    component: ConsumerDashboardComponent,
   },
   {
     path: 'products',
     component: ProductsComponent,
   },
   {
-    path: "",
-    redirectTo: "",
-    pathMatch: "full",
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [ProductsComponent],
   imports: [CommonModule, RouterModule.forChild(consumerRoutes)],
 })
 export class ConsumerModule {}

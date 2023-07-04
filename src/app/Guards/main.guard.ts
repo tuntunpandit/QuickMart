@@ -23,7 +23,6 @@ export class MainGuard implements CanActivate {
     | boolean
     | UrlTree {
     const user = this.authS.getDataFromLocalStorage('user');
-    console.log('MainGuard', user);
     if (!!user) {
       return true;
     }

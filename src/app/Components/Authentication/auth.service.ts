@@ -9,7 +9,7 @@ import { User } from 'src/app/Models/user';
 export class AuthService {
   baseUrl: string = 'https://dummyjson.com';
   isUserLoggedin: boolean = false;
-  user: User | Object;
+  user!: User | Object;
   constructor(private _http: HttpClient) {}
 
   login(username: string, password: string) {
